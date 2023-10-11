@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "List";
+}
+@model IEnumerable<SuperHero>
+<a asp-controller="Superhero" asp-action="AddHero" class="btn btn-primary">Ekle</a>
+<table class="table table-white table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Rumuz</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Şehir</th>
+            <th scope="col">İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hero in Model)
+        {
+            <tr>
+                <th scope="row">@hero.Id</th>
+                <td>@hero.Name</td>
+                <td>@hero.FirstName</td>
+                <td>@hero.LastName</td>
+                <td>@hero.Place</td>
+                <td>
+                    <a asp-controller="Superhero" asp-action="Update" asp-route-id="@hero.Id" >Düzenle</a>
+                    <a asp-controller="Superhero" asp-action="Delete" asp-route-id="@hero.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

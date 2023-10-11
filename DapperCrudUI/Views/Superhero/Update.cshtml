@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+
+@model SuperHero
+
+<form asp-action="Update" asp-controller="Superhero" method="post">
+    <div class="mb-3">
+        <label for="exampleInputText" class="form-label">Rumuz</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputText" class="form-label">Ad</label>
+        <input type="text" class="form-control" asp-for="FirstName">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputText" class="form-label">Soyad</label>
+        <input type="text" class="form-control" asp-for="LastName">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputText" class="form-label">Şehir</label>
+        <input type="text" class="form-control" asp-for="Place">
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+    <a asp-controller="Superhero" asp-action="List" class="btn btn-primary">Geri Dön</a>
+</form>
+
